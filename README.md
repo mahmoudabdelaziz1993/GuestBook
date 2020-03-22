@@ -1,4 +1,4 @@
-3GuestBook
+#GuestBook
 
 ## Table of contents
 * [General info](#general-info)
