@@ -4,6 +4,7 @@ const path = require('path');
 const router = require('./router');
 const authRouter = require('./auth');
 const User = require('./models/User');
+const Messages = require('./models/Messages');
 const jwt = require('jsonwebtoken');
 
 /** Setup the server socket.io */
@@ -62,6 +63,14 @@ io.on("connection", async (socket) => {
         }
 
     });
+    socket.on("deleteMessage",async (id,cb)=>{
+        try {
+            await Messages.findByIdAndDelete(id);
+            cb();
+        } catch (error) {
+            console.log(error);
+        }
+    })
     socket.on('disconnect', () => { console.log("user left ...") })
 })
 

@@ -34,13 +34,21 @@ function Chat({ location }) {
             socket.emit("sentMessage", { content, token }, () => SetContent(''));
         }
     }
-    
+    const deleteMessage  =  (mes , event)=>{
+        event.preventDefault();
+        socket.emit("deleteMessage", mes.id , ()=>{
+          let  msg =  messages.filter(message => message.content !== mes.content ) ;
+          console.log("msg",msg);
+          setMessages(msg);
+
+        });
+    }
     return (
         <div className="outerContainer">
             <div className="container">
                 <InfoBar/>
-                <Messages messages={messages} current={current}/>
-                <Input content={content} sendMessage={sendMessage} SetContent={SetContent} />
+                <Messages messages={messages} current={current} deleteMessage ={deleteMessage}/>
+                <Input content={content} sendMessage={sendMessage} SetContent={SetContent}  />
             </div>
         </div>
     )
