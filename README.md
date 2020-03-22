@@ -33,3 +33,7 @@ $ cd view
 $ npm install
 $ npm start
 ```
+## Screenshoots
+![Image description](screenshots/signin.jpg)
+![Image description](screenshots/delete.jpg)
+![Image description](screenshots/welcome_messages.jpg)
