@@ -4,6 +4,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Screenshoots](#Screenshoots)
 
 ## General info
 This project is public channel massaging app  users can create account  and  send , replay , delete
